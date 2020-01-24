@@ -18,7 +18,7 @@ async def on_message(message):
     if message.author.bot:
         return
     
-    if message.content == "!眠たい":
+    if message.content == "眠たい":
         await message.channel.send(f"{message.author.mention}さん 寝ましょう")
 
 

@@ -34,7 +34,12 @@ async def on_message(message):
         await message.channel.send(f"{message.author.mention}さん おやすみなさい")
     
     
-
+@bot.event
+async def on_server_join(member):
+    server = member.server
+    default channel = server.default_channel
+    message = ''はじめまして {}, {}へようこそ'.format(member.mention, server.name)'
+    await client.send_message(default_channel, message)
 
 
 

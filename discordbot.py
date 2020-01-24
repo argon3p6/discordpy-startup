@@ -12,6 +12,15 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
+@bot.event
+async def on_message(message):
+    """メッセージを処理"""
+    if message.author.bot:
+        return
+    
+    if message.content == "!眠たい":
+        await message.channel.send(f"{message.author.mention}さん 寝ましょう")
+
 
 @bot.command()
 async def ping(ctx):

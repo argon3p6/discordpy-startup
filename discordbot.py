@@ -18,8 +18,24 @@ async def on_message(message):
     if message.author.bot:
         return
     
-    if message.content == "眠たい":
+    if message.content == "ねむい":
         await message.channel.send(f"{message.author.mention}さん 寝ましょう")
+
+    if message.content == "おはよう":
+        await message.channel.send(f"{message.author.mention}さん おはよう")
+    
+    if message.content == "こんにちは":
+        await message.channel.send(f"{message.author.mention}さん こんにちは")
+
+    if message.content == "こんばんは":
+        await message.channel.send(f"{message.author.mention}さん こんばんは")
+
+    if message.content == "おやすみ":
+        await message.channel.send(f"{message.author.mention}さん おやすみなさい")
+    
+    
+
+
 
 
 @bot.command()

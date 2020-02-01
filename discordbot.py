@@ -19,7 +19,7 @@ async def on_message(message):
     if message.author.bot:
         return
     
-    if re.search(["[ねむい|眠い|眠たい]", message.content):
+    if re.search("[ねむい|眠い|眠たい]", message.content):
         await message.channel.send(f"{message.author.mention}さん 寝ましょう")
 
     if re.search("おはよう", message.content):

@@ -1,6 +1,7 @@
 from discord.ext import commands
 import os
 import traceback
+import re
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
@@ -18,7 +19,7 @@ async def on_message(message):
     if message.author.bot:
         return
     
-    if message.content == "ねむい":
+    if re.search("ねむい",message.content):
         await message.channel.send(f"{message.author.mention}さん 寝ましょう")
 
     if message.content == "おはよう":
@@ -39,5 +40,8 @@ async def on_message(message):
 async def ping(ctx):
     await ctx.send('pong')
 
+
+
+client.run(TOKEN)
 
 bot.run(token)

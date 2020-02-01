@@ -19,12 +19,20 @@ async def on_message(message):
     if message.author.bot:
         return
     
-    if message.content.startswith == "ねむい":
+    if re.search("ねむい" or "眠い" or "眠たい", message.content):
         await message.channel.send(f"{message.author.mention}さん 寝ましょう")
 
-    elif re.search("ねむい", message.content):
-        await message.channel.send(f"{message.author.mention}さん 寝ないんですか？")
+    if re.search("おはよう", message.content):
+        await message.channel.send(f"{message.author.mention}さん おはよう")
+    
+    if re.search("こんばんは" or "こんばんわ", message.content):
+        await message.channel.send(f"{message.author.mention}さん こんばんは")
+    
+    if re.search("こんにちは" or "こんにちわ", message.content):
+        await message.channel.send(f"{message.author.mention}さん こんにちは")
+    
 
+"""
     if message.content == "おはよう":
         await message.channel.send(f"{message.author.mention}さん おはよう")
     
@@ -36,7 +44,7 @@ async def on_message(message):
 
     if message.content == "おやすみ":
         await message.channel.send(f"{message.author.mention}さん おやすみなさい")
-    
+""" 
 
 
 @bot.command()

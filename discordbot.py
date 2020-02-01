@@ -31,7 +31,9 @@ async def on_message(message):
     if re.search("こんにち", message.content):
         await message.channel.send(f"{message.author.mention}さん こんにちは")
     
-
+    if re.search("おやすみ", message.content):
+        await message.channel.send(f"{message.author.mention}さん おやすみなさい")
+    
 """
     if message.content == "おはよう":
         await message.channel.send(f"{message.author.mention}さん おはよう")

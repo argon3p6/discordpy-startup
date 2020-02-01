@@ -22,13 +22,13 @@ async def on_message(message):
     if re.search("[ねむい|眠い|眠たい]", message.content):
         await message.channel.send(f"{message.author.mention}さん 寝ましょう")
 
-    if re.search("おはよう", message.content):
+    if re.search("おはよ", message.content):
         await message.channel.send(f"{message.author.mention}さん おはよう")
     
-    if re.search("こんばんは" or "こんばんわ", message.content):
+    if re.search("[こんばんは|こんばんわ]", message.content):
         await message.channel.send(f"{message.author.mention}さん こんばんは")
     
-    if re.search("こんにちは" or "こんにちわ", message.content):
+    if re.search("[こんにちは|こんにちわ]", message.content):
         await message.channel.send(f"{message.author.mention}さん こんにちは")
     
 
